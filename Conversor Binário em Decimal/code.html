@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>|| Conversor || Binário Decimal ||</title>
+  <style>
+    body {
+      background-color: black;
+      font-family: "Monocraft";
+      text-align: center;
+    }
+
+    button {
+      font-size: 20px;
+      width: 290px;
+      height: 50px;
+      margin-top: -90px;
+      color: green;
+      background-color: black;
+      outline: none;
+      font-family: "Monocraft";
+    }
+
+    input {
+      height: 60px;
+      outline: none;
+      box-shadow: 5px 5px 5px black;
+      background-color: black;
+      color: green;
+      width: 170px;
+      font-family: "Monocraft";
+    }
+
+    textarea {
+      height: 130px;
+      resize: none;
+      width: 200px;
+      margin-top: 20px;
+      outline: none;
+      box-shadow: 5px 5px 5px black;
+      background-color: black;
+      color: green;
+      font-family: "Monocraft";
+    }
+
+    legend {
+      margin-top: -2px;
+      font-size: 40px;
+      color: green;
+    }
+
+    button:hover {
+      cursor: pointer;
+      box-shadow: 5px 5px 5px rgb(0, 255, 55);
+      border: none;
+    }
+
+    .f1 {
+      background-color: black;
+      color: green;
+      font-size: 90px;
+      width: 100px;
+      height: 90px;
+      border: none;
+      margin-left: 300px;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .f2 {
+      background-color: black;
+      color: green;
+      font-size: 90px;
+      width: 100px;
+      margin-left: 496px;
+      margin-top: -191px;
+      background-color: rgb(0, 0, 0);
+      border: none;
+    }
+
+    .fmain {
+      margin-top: 160px;
+      border: none;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .converter {
+      margin-left: 90px;
+    }
+
+    .numpad {
+      border: none;
+      margin-left: -700px;
+      margin-top: -250px;
+    }
+
+    .num {
+      font-size: 19px;
+      width: 40px;
+      margin: 4px;
+      background-color: black;
+      color: green;
+    }
+
+    .a {
+      margin-top: -20px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <fieldset class="fmain">
+    <legend><strong>Conversor Decimal Binário</strong></legend>
+    <div class="converter">
+      <fieldset class="f1">
+        <div>
+          <input id="decimal" />
+        </div>
+      </fieldset>
+      <br />
+      <fieldset class="f2">
+        <div>
+          <textarea id="resultado"></textarea>
+        </div>
+      </fieldset>
+      <div>
+        <fieldset class="numpad">
+          <button id="num" onclick="sendnum1('7')" class="num">7</button>
+          <button id="num" onclick="sendnum2('8')" class="num">8</button>
+          <button id="num" onclick="sendnum3('9')" class="num">9</button><br />
+          <button id="num" onclick="sendnum4('6')" class="num">6</button>
+          <button id="num" onclick="sendnum5('5')" class="num">5</button>
+          <button id="num" onclick="sendnum6('4')" class="num">4</button><br />
+          <button id="num" onclick="sendnum7('1')" class="num">1</button>
+          <button id="num" onclick="sendnum8('2')" class="num">2</button>
+          <button id="num" onclick="sendnum9('3')" class="num">3</button><br />
+          <button id="num" onclick="sendnum0('0')" class="num">0</button>
+        </fieldset>
+      </div>
+    </div>
+    <div class="a">
+      <button onclick="converter()" class="ação"><strong>Fazer Conversão</strong></button>
+    </div>
+  </fieldset>
+</body>
+<script>
+  function converter() {
+    let dec = Number(document.getElementById("decimal").value);
+    validation();
+    function validation() {
+      if (dec == dec) {
+        alert("validando dados");
+        alert("realizando mudanças");
+        mudarBinário();
+      } else if (dec !== dec) {
+        alert("validando dados");
+        alert("erro, o valor inserido não é um decimal");
+        apagar();
+      } else {
+        alert("sem erros");
+        mudarBinário();
+      }
+      function apagar() {
+        document.getElementById("decimal").value = "";
+        document.getElementById("resultado").value = "";
+      }
+    }
+  }
+
+  function mudarBinário() {
+    let dec = Number(document.getElementById("decimal").value);
+    let conversão = dec.toString(2);
+    let resultado = document.getElementById("resultado").value = conversão;
+
+  }
+
+  function sendnum1() {
+    let keyboardnum = 7;
+    console.log("new value being sent : " + 7);
+    document.getElementById("decimal").value = keyboardnum;
+  }
+  function sendnum2() {
+    let keyboardnum = 8;
+    console.log("new value being sent : " + 8);
+    document.getElementById("decimal").value = keyboardnum;
+  }
+  function sendnum3() {
+    let keyboardnum = 9;
+    console.log("new value being sent : " + 9);
+    document.getElementById("decimal").value = keyboardnum;
+  }
+  function sendnum4() {
+    let keyboardnum = 6;
+    console.log("new value being sent : " + 6);
+    document.getElementById("decimal").value = keyboardnum;
+  }
+  function sendnum5() {
+    let keyboardnum = 5;
+    console.log("new value being sent : " + 5);
+    document.getElementById("decimal").value = keyboardnum;
+  }
+  function sendnum6() {
+    let keyboardnum = 4;
+    console.log("new value being sent : " + 4);
+    document.getElementById("decimal").value = keyboardnum;
+  }
+  function sendnum7() {
+    let keyboardnum = 1;
+    console.log("new value being sent : " + 1);
+    document.getElementById("decimal").value = keyboardnum;
+  }
+  function sendnum8() {
+    let keyboardnum = 2;
+    console.log("new value being sent : " + 2);
+    document.getElementById("decimal").value = keyboardnum;
+  }
+  function sendnum9() {
+    let keyboardnum = 3;
+    console.log("new value being sent : " + 3);
+    document.getElementById("decimal").value = keyboardnum;
+  }
+  function sendnum0() {
+    let keyboardnum = 0;
+    console.log("new value being sent : " + 0);
+    document.getElementById("decimal").value = keyboardnum;
+  }
+</script>
+
+</html>
